@@ -1,0 +1,47 @@
+{
+    "id":"tablex",
+    "bridge":"api/TableXBridge.php",
+    "action":"api/Action.php",
+
+    "table":"`data-pegawai`",
+    "join":[
+        {
+            "table":"jabatan",
+            "on":"`data-pegawai`.jabatan=jabatan.id",
+            "type":"inner"
+        },
+        {
+            "table":"pangkat",
+            "on":"`data-pegawai`.pangkat=pangkat.id",
+            "type":"inner"
+        }
+    ],
+    "sort":"`data-pegawai`.nama",
+    "content":[
+        {
+            "header":"Nama",
+            "value":"`data-pegawai`.nama"
+        },
+        {
+            "header":"Pangkat",
+            "value":"pangkat.nama"
+        },
+        {
+            "header":"Jabatan",
+            "value":"jabatan.nama"
+        },
+        {
+            "header":"NIK",
+            "value":"`data-pegawai`.NIK"
+        },
+        {
+            "header":"NIP",
+            "value":"`data-pegawai`.NIP"
+        },
+        {
+            "header":"Tanggal Naik Pangkat",
+            "value":"`data-pegawai`.`tanggal-naik-pangkat`",
+            "type":"fine-date"
+        }
+    ]
+}

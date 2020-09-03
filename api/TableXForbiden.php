@@ -1,0 +1,3 @@
+<?php
+    $TableXForbiden = ["login-users"];
+?>
